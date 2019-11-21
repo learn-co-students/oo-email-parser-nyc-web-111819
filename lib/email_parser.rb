@@ -16,8 +16,6 @@ class EmailAddressParser
         emails = @email
         array = []
         array << emails.split(/[,*\s]/)
-        array = array.flatten
-        array = array.reject(&:empty?)
-        array.uniq
+        array = array.flatten.reject(&:empty?).uniq
     end
 end
